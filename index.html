@@ -2,47 +2,68 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Sistem Pendataan Prestasi Siswa Versi 2.a</title>
+  <title>Pengumuman - Tautan Dialihkan</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ========================================= -->
   <!-- PENGATURAN FAVICON DARI GOOGLE DRIVE      -->
   <!-- ========================================= -->
-  <!-- 
-       Link asli: https://drive.google.com/file/d/1FcmY5GnSr6W5wWX1srT7zCHLe8alxwUX/view?usp=sharing
-       ID File: 1FcmY5GnSr6W5wWX1srT7zCHLe8alxwUX
-       Link Direct: https://drive.google.com/uc?export=view&id=1FcmY5GnSr6W5wWX1srT7zCHLe8alxwUX
-  -->
   <link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1FcmY5GnSr6W5wWX1srT7zCHLe8alxwUX">
   <link rel="shortcut icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1FcmY5GnSr6W5wWX1srT7zCHLe8alxwUX">
 
-  <style>
-    /* Reset CSS dasar */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden; /* Mencegah scroll ganda */
-      font-family: sans-serif;
-    }
+  <!-- Tailwind CSS untuk styling modern -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    /* Style untuk Iframe agar Full Screen */
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-  </style>
+  <!-- Auto-redirect fallback (berjaga-jaga jika JavaScript dinonaktifkan) -->
+  <meta http-equiv="refresh" content="5;url=https://smanli.co-id.id" />
 </head>
-<body>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans text-gray-800 p-4">
 
-  <!-- Iframe Aplikasi Script Google -->
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbygfHtkmVON8VUoX-hIX9Z7Dfzc9O1YOdNXyFDtuQBla1cAvZVLZI6TnKUlcybsbPST5A/exec"
-    allowfullscreen>
-  </iframe>
+  <div class="bg-white p-8 rounded-2xl shadow-xl max-w-md w-full text-center border border-gray-100">
+    
+    <!-- Ikon Informasi -->
+    <div class="mb-6 flex justify-center">
+      <div class="bg-blue-100 p-4 rounded-full text-blue-600">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Teks Pengumuman -->
+    <h1 class="text-2xl font-bold mb-3 text-gray-900">Halaman Dialihkan</h1>
+    <p class="mb-8 text-gray-600 leading-relaxed">
+      Sistem Pendataan Prestasi Siswa kini telah dipindahkan ke alamat baru. Silakan kunjungi website resmi kami untuk melanjutkan.
+    </p>
+
+    <!-- Tombol Menuju Link Baru -->
+    <a href="https://smanli.co-id.id/sp2s" 
+       class="inline-block w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl hover:bg-blue-700 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+      Menuju smanli.co-id.id
+    </a>
+
+    <!-- Hitung Mundur Pengalihan -->
+    <p class="mt-8 text-sm text-gray-500 font-medium">
+      Anda akan dialihkan secara otomatis dalam <span id="countdown" class="text-blue-600 font-bold">5</span> detik...
+    </p>
+  </div>
+
+  <!-- Script Hitung Mundur -->
+  <script>
+    let timeLeft = 5;
+    const countdownElement = document.getElementById('countdown');
+    
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdownElement.textContent = timeLeft;
+      
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        // Lakukan pengalihan
+        window.location.href = "https://smanli.co-id.id/sp2s";
+      }
+    }, 1000);
+  </script>
 
 </body>
 </html>
